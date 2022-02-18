@@ -1,4 +1,4 @@
-package com.mixer_grinder_service.model;
+package com.examly.springapp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
