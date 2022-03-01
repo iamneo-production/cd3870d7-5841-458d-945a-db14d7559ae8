@@ -1,7 +1,8 @@
 package com.examly.springapp.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -32,7 +33,9 @@ public class User  implements UserDetails {
     //using cascade type make ensure that whatEver the changes we making in user,get refleted in userRoles by default(crud)
     //fetch type eager means when we do fetch user,it's role get fetch
     //jsonIgnore is used to remove circular dependency
-   
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "user")
+    @JsonIgnore
+    private Set<UserRole> userRoles = new HashSet<>();
 
     //no args constructor
     public User() {
@@ -120,5 +123,30 @@ public class User  implements UserDetails {
         return true;
     }
 
- 
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    ////authortiy mean basically we have to return the set of authority like admin,customer etc
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        Set<Authority> set = new HashSet<>();
+        
+        //we will get authortiy from userRoles as declare above
+       this.userRoles.forEach(userRole -> {
+           set.add(new Authority(userRole.getRole().getRoleName()));
+       });
+        return set;
+    }
 }

@@ -1,7 +1,4 @@
-
-
 package com.examly.springapp.controller;
-
 
 import com.examly.springapp.model.Role;
 import com.examly.springapp.model.User;
@@ -35,5 +32,4 @@ public class UserController {
         roles.add(userRole);
         return this.userService.addUser(user,roles);
     }
-
 }
