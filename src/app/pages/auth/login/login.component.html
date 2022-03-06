@@ -1,0 +1,59 @@
+
+
+<div class="loginimage">
+    <img  id="imagelog" src="assets\login.png">
+</div>
+<div class="container">
+    <div class="myCard">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="myLeftCtn">
+
+                    <form    (ngSubmit)="formSubmit()" [formGroup]="Loginfg" class="myForm text-center" >
+                        <header>Log in </header>
+                        <br>
+                        
+                        <div class="form-group">
+                           
+                            <input [(ngModel)]="LoginData.email" class="myInput" type="text" placeholder="Email" id="email" formControlName="emailfg">
+                            <br>
+                            <small class="text-danger" *ngIf="  Loginfg.invalid  && Loginfg.touched">This feild is invalid </small>
+                            
+                        </div>
+                        <div class="form-group">
+                            <br>
+                            
+                            <input [(ngModel)]="LoginData.password" class="myInput" type="password" placeholder="Password" id="password" formControlName="passwordfg">
+                            <br>
+                            <small class="text-danger" *ngIf=" Loginfg.invalid && Loginfg.touched">This feild is invalid </small>
+                        </div>
+                        <br>
+                        <br>
+                        <input [disabled]="Loginfg.invalid" type="submit" class="butt" id="loginButton" value="Log in"  >
+                        
+                        
+                    </form>
+
+                </div>
+            </div>
+                
+                     <div class="col-md-6">
+                         <div class="myRightCtn">
+                             <div class="box">
+                                 <header>Welcome to Spinning Blades</header>
+                                 <br>
+                                 <p>Don't have your account with us yet ? Click below to get started.</p>
+                                 <br>
+                                
+                                 <a class="btn btn-secondary" id="signupbutton" 
+                                 [routerLink]="">Signup</a>
+                             
+                             
+                         
+                                 
+                             </div>
+                         </div>
+                     </div>
+        </div>
+    </div>
+</div>

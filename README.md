@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Angularapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.3.
@@ -26,6 +26,3 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-=======
-# cd3870d7-5841-458d-945a-db14d7559ae8
->>>>>>> b983385f47aef8e44eaeeedcf1b53198c47c7e94

@@ -1,0 +1,12 @@
+core.repositoryformatversion=0
+core.filemode=false
+core.bare=false
+core.logallrefupdates=true
+core.symlinks=false
+core.ignorecase=true
+remote.origin.url=https://github.com/naveen-veera/angularapp.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+user.email=rahulchaturvedi1302@gmail.com
+user.name=Rahul Kumar Chaturvedi
