@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Set;
+
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -38,5 +40,14 @@ public class UserServiceImpl implements UserService {
         }
 
         return local;
+    }
+    @Override
+    public Set<User> getUsers() {
+        return new HashSet<>(this.userRepository.findAll());
+    }
+
+    @Override
+    public User updateUser(User user) {
+        return this.userRepository.save(user);
     }
 }
