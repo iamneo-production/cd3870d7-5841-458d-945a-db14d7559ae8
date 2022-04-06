@@ -79,4 +79,7 @@ public class ServiceCenterModel {
     public String getServiceCenterDescription() {
         return serviceCenterDescription;
     }
+
+    public void setServiceCenterID(Long serviceCenterID2) {
+    }
 }
