@@ -42,7 +42,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long pId, String productName, String modelNumber, String contactNumber, String enterProblem, boolean status, LocalDate dateOfPurchase, ServiceCenter serviceCenter, User user, Bill bill) {
+    public Product(Long pId, String productName, String modelNumber, String contactNumber, String enterProblem, boolean status, LocalDate dateOfPurchase, ServiceCenterModel serviceCenter, User user, Bill bill) {
         this.pId = pId;
         this.productName = productName;
         this.modelNumber = modelNumber;
@@ -128,7 +128,7 @@ public class Product {
     }
 
     public Bill getBill() {
-        return bill;
+        return this.bill;
     }
 
     public void setBill(Bill bill) {
